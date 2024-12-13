@@ -1,0 +1,141 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #eeb842;
+}
+header {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    background-color: #eeb842;
+    color: #fff;
+    padding: 10px 20px; /* Added horizontal padding */
+}
+
+.homeicon {
+    width: 4rem; /* Icon width */
+    height: 4rem; /* Icon height */
+    margin-right: 1rem; /* Space between icon and title */
+}
+
+header h1 {
+    text-align: center; /* Center text */
+    font-family: cursive;
+    margin: 0;
+    flex-grow: 1; /* Allow h1 to take up available space */
+    font-size: 1.8em; /* Adjust font size for better visibility */
+}
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #9a6900;
+    /* border: solid 1px; */
+    border-radius: 20px 20px 0px 0px;
+}
+nav a {
+    color: #fff;
+    padding: 15px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+nav a:hover {
+    background-color: #555;
+}
+.hero {
+    position: relative; /* Position relative to allow absolute positioning of the overlay */
+    background: url('../image/webBg.jpg') no-repeat center center/cover;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    /* border-radius: 0px 0px 20px 20px; */
+}
+
+.hero::before {
+    content: ""; /* Required for pseudo-elements */
+    position: absolute; /* Position it absolutely within the hero section */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgb(203 174 110), rgb(255 212 116 / 0%)); /* Fade out effect */
+    /* border-radius: 0px 0px 20px 20px; */ /* Match the border radius of the hero */
+    z-index: 1; /* Ensure the overlay is above the background but below the text */
+}
+
+.hero h2 {
+    position: relative; /* Position relative to ensure it appears above the overlay */
+    font-size: 2.1em;
+    color: #ffec94;
+    font-style: italic;
+    font-family: auto;
+    text-shadow: 2px 2px 4px #000000;
+    margin: 0px;
+    z-index: 2; /* Ensure the text is above the overlay */
+}
+.content {
+    padding: 20px;
+}
+.content h2 {
+    font-family: cursive;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.menu, .news, .contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.menu-item, .news-item, .contact-item {
+    height: 21rem;
+    background-color: #ffd39e;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 20px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.menu-item img, .news-item img, .contact-item img {
+    height: 15rem;
+    width: 100%;
+    border-radius: 5px;
+}
+.menu-item h3, .news-item h3, .contact-item h3 {
+    color: #be4646;
+    margin: 10px 0;
+}
+.menu-item p, .news-item p, .contact-item p {
+    margin: 0;
+    color: #54160c;
+    font-weight: 100;
+}
+footer
+{
+    background-color: #7d5c14;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+@media (max-width: 768px) {
+    .menu-item, .news-item {
+        width: 100%;
+    }
+    header {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: center; /* Center items */
+    }
+
+    header h1 {
+        font-size: 1.5em; /* Adjust font size for smaller screens */
+        text-align: center; /* Ensure text is centered */
+    }
+
+    .homeicon {
+        width: 3rem; /* Smaller icon size for mobile */
+        height: 3rem; /* Smaller icon size for mobile */
+        margin: 0; /* Remove margin for mobile */
+    }
+}
